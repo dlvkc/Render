@@ -335,18 +335,10 @@ if [[ -z "\${PAAS1_URL}"]]; then
     exit 1
 fi
 
-function handle_error() {
-    # 处理错误函数
-    echo "连接超时"
-    sleep 10
-}
-
 while true
 do
-  curl --connect-timeout \${PAAS1_URL}
+  curl \${PAAS1_URL}
   sleep 10m
-done
-echo Accidental termination
 done
 EOF
 }
